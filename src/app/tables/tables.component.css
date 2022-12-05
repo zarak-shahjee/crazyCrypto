@@ -1,0 +1,30 @@
+.center {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    
+    transform: translate(-50%, -50%);
+
+    width: 94%;
+    height: 60%;
+  }
+  .spinner-position {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35px;
+    margin-left: -35px;
+    z-index: 3;
+  }
+  .heading-position {
+    width: 70px;
+    height: 85px;
+ 
+    top: 25%;
+    left: 50%;
+    margin-top: 10px;
+    margin-left: 40%;
+    z-index: 1;
+  }

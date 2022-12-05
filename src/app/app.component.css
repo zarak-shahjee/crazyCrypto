@@ -1,0 +1,12 @@
+.navbar .navbar-nav > li > a {
+    line-height: 45px;
+     };
+
+     button {
+        padding: 0 !important;
+border: none !important;
+background: none !important;
+     }
+     li{
+        cursor: pointer;
+    }
