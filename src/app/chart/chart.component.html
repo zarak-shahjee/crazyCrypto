@@ -1,0 +1,12 @@
+
+ <div class="dropdown">
+    <span> Coin  </span>
+    <p-dropdown class=".p-dropdown" [options]="ids" [(ngModel)]="selectedId" optionLabel="id" [virtualScroll]="true" itemSize="30" [filter]="true" filterBy="id"
+    placeholder="Select a Coin" (onChange)="updateChart(selectedId)"></p-dropdown>
+ </div>
+<p></p>
+ <div class="card">
+   
+
+    <p-chart type="line" [data]="basicData" [options]="basicOptions"></p-chart>
+  </div>

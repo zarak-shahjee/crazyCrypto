@@ -36,6 +36,7 @@
     </span>
   </ng-template>
   </p-menubar>
-  <app-tables *ngIf="!news" [tab]="tab" #table></app-tables>
+  <app-tables *ngIf="!news && tables" [tab]="tab" #table></app-tables>
   <app-news *ngIf="news" ></app-news>
+  <app-chart *ngIf="chart"></app-chart>
 </ng-template>

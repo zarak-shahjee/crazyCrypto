@@ -1,4 +1,4 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -9,15 +9,17 @@ import { AuthService } from './auth.service';
 export class AppComponent {
   @ViewChild('table') table;
   title = 'crazyCrypto';
-  tab ='coins'
-  login =true;
-  user=null;
-  items=[]
-  news=true;
-  isAuthenticated=false;
-  isCollapsed=true;
-backgroundc="background-color: rgb(246, 200, 100);";
-  constructor(private authService:AuthService){}
+  tab = 'coins'
+  login = true;
+  user = null;
+  items = []
+  news = true;
+  chart = false;
+  tables = false;
+  isAuthenticated = false;
+  isCollapsed = true;
+  backgroundc = "background-color: rgb(246, 200, 100);";
+  constructor(private authService: AuthService) { }
   isShowDivIf = true;
   toggleDisplayDivIf() {
     this.isShowDivIf = !this.isShowDivIf;
@@ -26,44 +28,50 @@ backgroundc="background-color: rgb(246, 200, 100);";
     this.items = [
       {
         label: 'News',
-        command: (res) => this.news=true,
+        command: (res) => this.news = true,
       },
       {
-          label: 'Coins',
-          command: (res) => this.navigate('coins'),
+        label: 'Charts',
+        command: (res) => { this.chart = true; this.news = false; this.tables = false; },
+      },
+      {
+        label: 'Coins',
+        command: (res) => this.navigate('coins'),
       },
       {
         label: 'Markets',
         command: (res) => this.navigate('markets'),
-    },
-    {
-      label: 'Rates',
-      command: (res) => this.navigate('rates'),
-  },
-  {
-    label: 'Exchanges',
-    command: (res) => this.navigate('exchanges'),
-},
+      },
+      {
+        label: 'Rates',
+        command: (res) => this.navigate('rates'),
+      },
+      {
+        label: 'Exchanges',
+        command: (res) => this.navigate('exchanges'),
+      },
 
-  ]
+    ]
     this.authService.userSub.subscribe((user) => {
       this.isAuthenticated = user ? true : false;
-      this.user=user;
-     
+      this.user = user;
+
     });
   }
-  navigate(nav: string){
+  navigate(nav: string) {
     console.log(nav);
-    this.tab=nav;
-    this.news=false;
+    this.tab = nav;
+    this.news = false;
+    this.chart = false;
+    this.tables = true
     this.table.updateData(nav);
-    
+
   }
-  navigateMainPage(event){
+  navigateMainPage(event) {
     console.log(event);
-    this.login=false;
+    this.login = false;
   }
-  logout(){
-    this.isAuthenticated=false;
+  logout() {
+    this.isAuthenticated = false;
   }
 }

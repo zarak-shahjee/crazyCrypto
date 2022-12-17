@@ -17,13 +17,18 @@ import {MenuItem} from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsComponent } from './news/news.component';
 import { CardModule, } from 'primeng/card';
+import {ChartModule} from 'primeng/chart';
+import { ChartComponent } from './chart/chart.component';
+import {DropdownModule} from 'primeng/dropdown';
+
 
 @NgModule({
     declarations: [
         AppComponent,
         TablesComponent,
         LoginComponent,
-        NewsComponent
+        NewsComponent,
+        ChartComponent
     ],
     providers: [DataService],
     bootstrap: [AppComponent],
@@ -38,7 +43,9 @@ import { CardModule, } from 'primeng/card';
         ButtonModule,
         BrowserAnimationsModule,
         MenubarModule,
-        CardModule
+        CardModule,
+        ChartModule,
+        DropdownModule
     ]
 })
 export class AppModule { }
