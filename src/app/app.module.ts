@@ -15,11 +15,15 @@ import { ButtonModule } from 'primeng/button';
 import {MenubarModule} from 'primeng/menubar';
 import {MenuItem} from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewsComponent } from './news/news.component';
+import { CardModule, } from 'primeng/card';
+
 @NgModule({
     declarations: [
         AppComponent,
         TablesComponent,
-        LoginComponent
+        LoginComponent,
+        NewsComponent
     ],
     providers: [DataService],
     bootstrap: [AppComponent],
@@ -33,7 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         OverlayPanelModule,
         ButtonModule,
         BrowserAnimationsModule,
-        MenubarModule
+        MenubarModule,
+        CardModule
     ]
 })
 export class AppModule { }

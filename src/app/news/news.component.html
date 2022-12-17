@@ -1,0 +1,8 @@
+<p class="head">News</p>
+<p-card *ngFor="let new of news" [header]="new.title"[style]="{width: '360px'}" styleClass="shadow-2" class="card">
+    <ng-template pTemplate="header">
+        <img alt="Card" [src]="new.image_url">
+    </ng-template>
+    <p>{{new.text}}</p>
+   
+</p-card>

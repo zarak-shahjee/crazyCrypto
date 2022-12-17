@@ -2,67 +2,40 @@
   <app-login (loginEvent)="navigateMainPage($event)"></app-login>
 
 </div>
-<!-- <p-menubar [style]="backgroundc" [model]="items"></p-menubar> -->
+
 
 <ng-template #logindone>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(246, 200, 100);">
-    <a class="navbar-brand" style="color: rgb(158, 85, 3)" href="#">CRAZY CRYPTO</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isCollapsed=!isCollapsed" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
-      <ul class="navbar-nav">
-        <li class="nav-item active px-4">
-          <a class="nav-link" (click)="navigate('coins')">COINS</a>
-        </li>
-        <li class="nav-item px-4">
-          <a class="nav-link" (click)="navigate('markets')">MARKETS</a>
-        </li>
-        <li class="nav-item px-4">
-          <a class="nav-link" (click)="navigate('rates')">RATES</a>
-        </li>
-        <li class="nav-item px-4">
-          <a class="nav-link " (click)="navigate('exchanges')">EXCHANGES</a>
-        </li>
-        <li class="nav-item px-4">
-          <a class="nav-link " (click)="navigate('news')">NEWS</a>
-        </li>
-        <li class="nav-item px-4">
-         
-
-        </li>
-        <li class="nav-item px-4">
-        </li>
-      </ul>
-
-      <span class="navbar-text">
-        <a class="nav-link " href="#"  (click)="op.toggle($event)"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-          fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-          <path fill-rule="evenodd"
-            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-        </svg></a>
-        <!-- <p-button [label]="selectedProduct ? selectedProduct.name : 'Select a Product'" icon="pi pi-search" (click)="op.toggle($event)"></p-button> -->
-
-        <p-overlayPanel #op [showCloseIcon]="true" [style]="{width: '450px'}">
-          <ng-template pTemplate>
-            <div class="overlay-content-container">
-                <div class="label-large"><p class="text-monospace">user email: {{this.user.email}}</p>
-                  </div>
-                <br>
-            </div>
-            <div class="overlay-actionlink-container">
-              <button type="button" class="btn btn-danger" (click)="logout()">logut</button>
-
-            </div>
-        </ng-template>
-        </p-overlayPanel>
-      </span>
-
-    </div>
-
-  </nav>
-
-  <app-tables [tab]="tab" #table></app-tables>
-
+  <p-menubar [style]="backgroundc" [model]="items" >
+    <ng-template pTemplate="start">
+      <img src="assets/icon.png" height="40" class="mr-2">
+  </ng-template>
+   <ng-template pTemplate="end">
+    <span class="navbar-text">
+      <a class="nav-link "  (click)="op.toggle($event)"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+        fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+        <path fill-rule="evenodd"
+          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+      </svg></a>
+      <!-- <p-button [label]="selectedProduct ? selectedProduct.name : 'Select a Product'" icon="pi pi-search" (click)="op.toggle($event)"></p-button> -->
+  
+      <p-overlayPanel #op [showCloseIcon]="true" [style]="{width: '250px'}" [appendTo]='body'
+      > 
+        <ng-template pTemplate>
+          <div class="overlay-content-container">
+              <div class="label-large"><p class="text-monospace">user email: {{this.user.email}}</p>
+                </div>
+              <br>
+          </div>
+          <div class="overlay-actionlink-container">
+            <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+  
+          </div>
+      </ng-template>
+      </p-overlayPanel>
+    </span>
+  </ng-template>
+  </p-menubar>
+  <app-tables *ngIf="!news" [tab]="tab" #table></app-tables>
+  <app-news *ngIf="news" ></app-news>
 </ng-template>

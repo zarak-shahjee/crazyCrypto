@@ -1,11 +1,12 @@
 .center {
-  position: absolute;
+  position: fixed;
   left: 50%;
-  top: 40%;
-  background-color: rgb(162, 162, 230);
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
+  top: 10%;
+  background-color: #dcd8d8;
+  /* transform: translate(-50%, -50%); */
+  width: 500px;
+  height: 70%;
+  border-radius: 28px;
 }
 .spinner-position {
   width: 70px;
@@ -16,4 +17,38 @@
   margin-top: -35px;
   margin-left: -35px;
   z-index: 3;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  border-radius: 50px;
+}
+.flex-item-left {
+ 
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  padding: 10px;
+  flex: 40%;
+}
+.head{
+  flex: 100%;
+}
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex {
+    flex-direction: column;
+  }
+}
+.TITLE{
+  font-size: 20px;
+  font-family:cursive;
+  font-weight: 1000;
+  color: chocolate;
+}
+.help-text{
+  color:red;
 }

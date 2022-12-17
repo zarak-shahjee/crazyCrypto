@@ -13,6 +13,7 @@ export class AppComponent {
   login =true;
   user=null;
   items=[]
+  news=true;
   isAuthenticated=false;
   isCollapsed=true;
 backgroundc="background-color: rgb(246, 200, 100);";
@@ -24,14 +25,26 @@ backgroundc="background-color: rgb(246, 200, 100);";
   ngOnInit() {
     this.items = [
       {
-          label: 'File',
+        label: 'News',
+        command: (res) => this.news=true,
+      },
+      {
+          label: 'Coins',
           command: (res) => this.navigate('coins'),
       },
       {
-          label: 'Edit',
-          icon: 'pi pi-fw pi-pencil',
-          
-      }
+        label: 'Markets',
+        command: (res) => this.navigate('markets'),
+    },
+    {
+      label: 'Rates',
+      command: (res) => this.navigate('rates'),
+  },
+  {
+    label: 'Exchanges',
+    command: (res) => this.navigate('exchanges'),
+},
+
   ]
     this.authService.userSub.subscribe((user) => {
       this.isAuthenticated = user ? true : false;
@@ -42,7 +55,9 @@ backgroundc="background-color: rgb(246, 200, 100);";
   navigate(nav: string){
     console.log(nav);
     this.tab=nav;
+    this.news=false;
     this.table.updateData(nav);
+    
   }
   navigateMainPage(event){
     console.log(event);

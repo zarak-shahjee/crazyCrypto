@@ -1,0 +1,16 @@
+.card{
+    display: inline-flex;
+    padding: 10px;
+    border: yellow;
+}
+
+.head {width: 70px;
+    height: 85px;
+    top: 25%;
+    left: 50%;
+    margin-top: 10px;
+    margin-left: 40%;
+    z-index: 1;
+    font-size: 40px;
+    color:#495057;
+}
