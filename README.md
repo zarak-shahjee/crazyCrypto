@@ -21,12 +21,16 @@ Install git  if not present https://git-scm.com/download/win download and run
 <br>
 STEP 4:
 Git clone  the repo with the below commands in the dir you want
+<br>
 STEP 5:
 In the root dir of the repos, do npm install
+<br>
 STEP 6:
 After that run <b>npm run start </b> to run the application 
+<br>
 STEP 7:
 To run services run node index.js
+<br>
 STEP 8:
 Install cors origin plugin in the browser and SwiTch ON the plugin
 https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
