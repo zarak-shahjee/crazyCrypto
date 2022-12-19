@@ -20,7 +20,7 @@ STEP 3:
 Install git  if not present https://git-scm.com/download/win download and run
 <br>
 STEP 4:
-Git clone  the repo with the below commands in the dir you want
+Git clone  the repo with <b> git clone </b> in the dir you want
 <br>
 STEP 5:
 In the root dir of the repos, do npm install
